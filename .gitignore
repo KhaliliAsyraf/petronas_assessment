@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /dist
 /node_modules
 /database/database.sqlite
@@ -25,3 +26,15 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 composer.phar
+=======
+# For projects using Nanoc (http://nanoc.ws/)
+
+# Default location for output (needs to match output_dir's value found in nanoc.yaml)
+output/
+
+# Temporary file directory
+tmp/nanoc/
+
+# Crash Log
+crash.log
+>>>>>>> 3cb49870ae7cd1c37f22e32204da1dd530c758ba
