@@ -2,9 +2,9 @@
 
 ### Kindly noted
 
-1. This project was using PHP language
+1. This project was using PHP language and NPM
 
-2. Please do install PHP and composer first before start this project
+2. Please do install PHP, composer, NPM first before start this project
 
 ``` bash
 # clone the repo
