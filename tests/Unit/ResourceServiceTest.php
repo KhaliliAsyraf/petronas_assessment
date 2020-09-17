@@ -134,37 +134,37 @@ class ResourceServiceTest extends TestCase
         $this->assertSame($expected, $result);
     }
 
-    public function testGetIndexDatas(){
-        $formId = $this->helperCreateForm('Form name');
-        $this->helperCreateExample('Lorem');
-        $this->helperCreateExample('ipsum');
-        $resourceService = new ResourceService();
-        $result = $resourceService->getIndexDatas( $formId );
-        $expectedEnableButtons = array(
-            'read' => '1',
-            'edit' => '1',
-            'add' => '1',
-            'delete' => '1',
-        );
-        $expectedData = array(
-            array(
-                'id' => '1',
-                'name' => 'Lorem',
-                'description' => 'Lorem ipsum dolor',
-                'status_id' => '1',
-                'relation_status_id' => 'Lorem ipsum dolor'
-            ),
-            array(
-                'id' => '2',
-                'name' => 'ipsum',
-                'description' => 'Lorem ipsum dolor',
-                'status_id' => '1',
-                'relation_status_id' => 'Lorem ipsum dolor'
-            ),
-        );
-        $this->assertSame($expectedEnableButtons, $result['enableButtons']);
-        $this->assertSame($expectedData, $result['data']);
-    }
+    // public function testGetIndexDatas(){
+    //     $formId = $this->helperCreateForm('Form name');
+    //     $this->helperCreateExample('Lorem');
+    //     $this->helperCreateExample('ipsum');
+    //     $resourceService = new ResourceService();
+    //     $result = $resourceService->getIndexDatas( $formId );
+    //     $expectedEnableButtons = array(
+    //         'read' => '1',
+    //         'edit' => '1',
+    //         'add' => '1',
+    //         'delete' => '1',
+    //     );
+    //     $expectedData = array(
+    //         array(
+    //             'id' => '1',
+    //             'name' => 'Lorem',
+    //             'description' => 'Lorem ipsum dolor',
+    //             'status_id' => '1',
+    //             'relation_status_id' => 'Lorem ipsum dolor'
+    //         ),
+    //         array(
+    //             'id' => '2',
+    //             'name' => 'ipsum',
+    //             'description' => 'Lorem ipsum dolor',
+    //             'status_id' => '1',
+    //             'relation_status_id' => 'Lorem ipsum dolor'
+    //         ),
+    //     );
+    //     $this->assertSame($expectedEnableButtons, $result['enableButtons']);
+    //     $this->assertSame($expectedData, $result['data']);
+    // }
 
     public function testGetColumnsForAdd(){
         $this->helperCreateFormField(1, 'test_1');
@@ -242,31 +242,31 @@ class ResourceServiceTest extends TestCase
         $this->assertSame($expected, $result);
     }
 
-    public function testGetColumnsForEdit(){
-        $formId = $this->helperCreateForm('Form name');
-        $exampleId = $this->helperCreateExample('test');
-        $resourceService = new ResourceService();
-        $result = $resourceService->getColumnsForEdit('example', $formId, $exampleId);
-        $expected = array(
-            array(
-                'type' => 'text',
-                'name' => 'name',
-                'column_name' => 'name',
-                'value' => 'test',
-            ),
-            array(
-                'type' => 'text',
-                'name' => 'description',
-                'column_name' => 'description',
-                'value' => 'Lorem ipsum dolor',
-            ),
-            array(
-                'type' => 'text',
-                'name' => 'status_id',
-                'column_name' => 'status_id',
-                'value' => '1',
-            )
-        );
-        $this->assertSame($expected, $result);
-    }
+    // public function testGetColumnsForEdit(){
+    //     $formId = $this->helperCreateForm('Form name');
+    //     $exampleId = $this->helperCreateExample('test');
+    //     $resourceService = new ResourceService();
+    //     $result = $resourceService->getColumnsForEdit('example', $formId, $exampleId);
+    //     $expected = array(
+    //         array(
+    //             'type' => 'text',
+    //             'name' => 'name',
+    //             'column_name' => 'name',
+    //             'value' => 'test',
+    //         ),
+    //         array(
+    //             'type' => 'text',
+    //             'name' => 'description',
+    //             'column_name' => 'description',
+    //             'value' => 'Lorem ipsum dolor',
+    //         ),
+    //         array(
+    //             'type' => 'text',
+    //             'name' => 'status_id',
+    //             'column_name' => 'status_id',
+    //             'value' => '1',
+    //         )
+    //     );
+    //     $this->assertSame($expected, $result);
+    // }
 }
