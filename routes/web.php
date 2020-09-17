@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => ['get.menu']], function () {
-    Route::get('/', function () {           return view('dashboard.homepage'); });
+    Route::get('/', function () {           return view('auth.login'); });
 
     Route::group(['middleware' => ['role:user']], function () {
         Route::get('/colors', function () {     return view('dashboard.colors'); });
@@ -59,6 +59,11 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/modals', function(){   return view('dashboard.notifications.modals'); });
         });
         Route::resource('notes', 'NotesController');
+        Route::prefix('repository')->group(function () {
+            Route::get('/search-page', 'RepositoriesController@searchList')->name('repository.search-result');
+            Route::get('/search', 'RepositoriesController@create')->name('repository.search');
+        });
+        Route::resource('repository', 'RepositoriesController');
     });
     Auth::routes();
 
